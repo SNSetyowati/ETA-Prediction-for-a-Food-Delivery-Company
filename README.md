@@ -39,6 +39,7 @@ ETA-Prediction-for-a-Food-Delivery-Company/
 ├── notebooks/          # Jupyter notebook (EDA, modeling, evaluasi)
 ├── src/                # Script Python (preprocessing, fitur, training)
 ├── models/             # Model yang sudah dilatih
+├── outputs/            # Hasil prediksi ETA & risiko untuk pesanan aktif
 ├── report/             # Laporan akhir / presentasi (PDF, PPT, grafik)
 ├── dashboard/          # File dashboard (Tableau / Power BI / Looker Studio / Streamlit)
 ├── requirements.txt    # Daftar library Python
@@ -63,15 +64,52 @@ ETA-Prediction-for-a-Food-Delivery-Company/
 | **RMSE** | Memberi penalti lebih besar pada error yang besar |
 | **R²** | Proporsi variasi waktu pengiriman yang dapat dijelaskan oleh model |
 
+## ⚡ Prediksi ETA & Risiko untuk Pesanan Aktif
+
+Script `src/predict_eta.py` belajar dari data historis (`Capstone_Team1_CleanedData_v1_Zamato_Delivery_Operation.xlsx`, sheet *Zamato Delivery Filtering*) lalu memberi skor pada setiap pesanan di `active_deliveries_ZC.xlsx`.
+
+**Output:** `outputs/active_deliveries_ZC_predicted.xlsx`
+
+| Sheet | Isi |
+|---|---|
+| `Summary` | Ringkasan jumlah pesanan per kategori risiko, label kondisi, dan performa model |
+| `Active_Deliveries` | Seluruh 50 pesanan + `Predicted_ETA_min`, `Risk_Score`, `Risk_Category`, label cuaca/lalu lintas/festival |
+| `High_Critical` | Pesanan berisiko **High** dan **Critical** (perlu perhatian) |
+| `Low_Medium` | Pesanan lainnya |
+| `Backtest` | Perbandingan ETA prediksi vs. waktu aktual (`Ground_Truth`) |
+| `Risk_Rules` | Tabel poin risiko & ambang kategori (dapat diubah, rumus otomatis menghitung ulang) |
+
+Salinan CSV (`outputs/*.csv`) disediakan untuk kebutuhan dashboard.
+
+**Predicted ETA** – model LightGBM dengan fitur: jarak (haversine), waktu tunggu pickup, jam pemesanan, cuaca, lalu lintas, festival, kota, jenis pesanan & kendaraan, kondisi kendaraan, multiple deliveries, serta usia & rating kurir. Pesanan historis yang sama dengan batch aktif dikeluarkan dari data latih agar backtest jujur.
+
+**Risk Score** – mengikuti aturan skor risiko historis (cocok 100% pada 40.088 baris):
+
+| Faktor | Poin |
+|---|---|
+| Cuaca | Sunny 0 · Windy 10 · Cloudy/Fog/Sandstorms/Stormy 20 |
+| Lalu lintas | Low 0 · Medium 10 · High 20 · Jam 30 |
+| Festival / event | Yes 30 |
+| Multiple deliveries | 10 per pesanan tambahan |
+
+Skor dibatasi maksimal 100. **Kategori:** Low (0–29) · Medium (30–49) · High (50–69) · Critical (≥70). Ambang ini diambil dari data historis: skor ≥70 → 57–95% pesanan memakan waktu >40 menit.
+
+**Label:** Cuaca (Clear / Moderate / Adverse), Lalu lintas (Smooth / Moderate / Heavy / Severe), Festival (Normal Day / Festival / Event).
+
+```bash
+# Letakkan kedua file Excel di data/raw/, lalu:
+python src/predict_eta.py
+```
+
 ## 🏆 Hasil
 
-_Akan diperbarui setelah proses modeling._
-
-| Model | MAE | RMSE | R² |
+| Model | MAE (menit) | RMSE (menit) | R² |
 |---|---|---|---|
-| Linear Regression | – | – | – |
-| Random Forest | – | – | – |
-| XGBoost | – | – | – |
+| Baseline (rata-rata) | 7,66 | – | – |
+| LightGBM (hold-out 20%) | 3,05 | 3,80 | 0,838 |
+| LightGBM (backtest 50 pesanan aktif) | 3,28 | 3,76 | – |
+
+Batch aktif ZC: 14 High, 22 Medium, 14 Low, 0 Critical.
 
 ## 📑 Report
 
