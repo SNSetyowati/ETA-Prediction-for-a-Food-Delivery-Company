@@ -9,3 +9,4 @@ jupyter
 streamlit
 openpyxl
 joblib
+pytest
