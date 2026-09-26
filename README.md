@@ -1,71 +1,71 @@
-# 🛵 Estimated Time of Arrival (ETA) Prediction for a Food Delivery Company
+# 🛵 Prediksi Estimated Time of Arrival (ETA) untuk Perusahaan Food Delivery
 
-Predicting food delivery time (ETA) using machine learning to improve customer experience, courier allocation, and operational efficiency.
+Memprediksi waktu pengiriman makanan (ETA) menggunakan machine learning untuk meningkatkan pengalaman pelanggan, alokasi kurir, dan efisiensi operasional.
 
 ---
 
-## 📌 Project Overview
+## 📌 Gambaran Proyek
 
-Accurate delivery time estimates are critical for food delivery platforms. Underestimating the ETA leads to disappointed customers, while overestimating it can reduce conversion. This project builds a regression model that predicts how long an order will take to arrive, based on order, restaurant, courier, and environmental factors.
+Estimasi waktu pengiriman yang akurat sangat penting bagi platform food delivery. ETA yang terlalu cepat membuat pelanggan kecewa, sedangkan ETA yang terlalu lama dapat menurunkan konversi pesanan. Proyek ini membangun model regresi untuk memprediksi berapa lama sebuah pesanan akan sampai, berdasarkan faktor pesanan, restoran, kurir, dan lingkungan.
 
-## 🎯 Objectives
+## 🎯 Tujuan
 
-- Explore and understand the key factors that influence delivery time.
-- Build and evaluate machine learning models to predict ETA (in minutes).
-- Deliver insights and recommendations in a business **report**.
-- Present results through an interactive **dashboard**.
+- Mengeksplorasi dan memahami faktor-faktor utama yang memengaruhi waktu pengiriman.
+- Membangun dan mengevaluasi model machine learning untuk memprediksi ETA (dalam menit).
+- Menyajikan insight dan rekomendasi bisnis dalam bentuk **report**.
+- Menampilkan hasil analisis melalui **dashboard** interaktif.
 
 ## 📊 Dataset
 
-The dataset contains food delivery order records with features such as:
+Dataset berisi data pesanan food delivery dengan fitur-fitur seperti:
 
-| Category | Example Features |
+| Kategori | Contoh Fitur |
 |---|---|
-| Courier | age, rating, vehicle type, vehicle condition |
-| Location | restaurant & delivery coordinates, distance, city type |
-| Order | order type, order date, time ordered, time picked up |
-| Environment | weather conditions, road traffic density, festival |
+| Kurir | usia, rating, jenis kendaraan, kondisi kendaraan |
+| Lokasi | koordinat restoran & tujuan, jarak, tipe kota |
+| Pesanan | jenis pesanan, tanggal pesanan, waktu pesan, waktu pickup |
+| Lingkungan | kondisi cuaca, kepadatan lalu lintas, festival |
 | Target | `time_taken (min)` |
 
-> Place raw data in `data/raw/` and processed data in `data/processed/` (data files are not tracked by Git).
+> Simpan data mentah di `data/raw/` dan data hasil olahan di `data/processed/` (file data tidak disimpan di Git).
 
-## 🗂️ Project Structure
+## 🗂️ Struktur Proyek
 
 ```
 ETA-Prediction-for-a-Food-Delivery-Company/
 ├── data/
-│   ├── raw/            # Original, immutable dataset
-│   └── processed/      # Cleaned & feature-engineered data
-├── notebooks/          # Jupyter notebooks (EDA, modeling, evaluation)
-├── src/                # Reusable Python scripts (preprocessing, features, training)
-├── models/             # Trained model artifacts
-├── report/             # Final report / presentation (PDF, PPT, figures)
-├── dashboard/          # Dashboard files (Tableau / Power BI / Looker Studio / Streamlit)
-├── requirements.txt    # Python dependencies
+│   ├── raw/            # Dataset asli (tidak diubah)
+│   └── processed/      # Data yang sudah dibersihkan & feature engineering
+├── notebooks/          # Jupyter notebook (EDA, modeling, evaluasi)
+├── src/                # Script Python (preprocessing, fitur, training)
+├── models/             # Model yang sudah dilatih
+├── report/             # Laporan akhir / presentasi (PDF, PPT, grafik)
+├── dashboard/          # File dashboard (Tableau / Power BI / Looker Studio / Streamlit)
+├── requirements.txt    # Daftar library Python
 └── README.md
 ```
 
-## 🔄 Workflow
+## 🔄 Alur Kerja
 
-1. **Business Understanding** – define the problem and success metrics.
-2. **Data Understanding & EDA** – distributions, correlations, and key drivers of delivery time.
-3. **Data Preparation** – cleaning, handling missing values, outliers, and encoding.
-4. **Feature Engineering** – haversine distance, time of day, day of week, preparation time, etc.
-5. **Modeling** – baseline (Linear Regression) vs. tree-based models (Random Forest, XGBoost, LightGBM).
-6. **Evaluation** – MAE, RMSE, and R² on a held-out test set.
-7. **Reporting & Dashboard** – communicate insights and model results to stakeholders.
+1. **Business Understanding** – mendefinisikan masalah dan metrik keberhasilan.
+2. **Data Understanding & EDA** – distribusi data, korelasi, dan faktor utama waktu pengiriman.
+3. **Data Preparation** – pembersihan data, penanganan missing value, outlier, dan encoding.
+4. **Feature Engineering** – jarak haversine, jam pemesanan, hari dalam seminggu, waktu persiapan, dll.
+5. **Modeling** – baseline (Linear Regression) vs. model berbasis tree (Random Forest, XGBoost, LightGBM).
+6. **Evaluasi** – MAE, RMSE, dan R² pada data test.
+7. **Report & Dashboard** – mengomunikasikan insight dan hasil model kepada stakeholder.
 
-## 📈 Evaluation Metrics
+## 📈 Metrik Evaluasi
 
-| Metric | Description |
+| Metrik | Deskripsi |
 |---|---|
-| **MAE** | Average absolute error in minutes — easy to interpret for the business |
-| **RMSE** | Penalizes large errors more heavily |
-| **R²** | Proportion of variance in delivery time explained by the model |
+| **MAE** | Rata-rata selisih absolut dalam menit — mudah dipahami oleh tim bisnis |
+| **RMSE** | Memberi penalti lebih besar pada error yang besar |
+| **R²** | Proporsi variasi waktu pengiriman yang dapat dijelaskan oleh model |
 
-## 🏆 Results
+## 🏆 Hasil
 
-_To be updated after modeling._
+_Akan diperbarui setelah proses modeling._
 
 | Model | MAE | RMSE | R² |
 |---|---|---|---|
@@ -75,29 +75,29 @@ _To be updated after modeling._
 
 ## 📑 Report
 
-The full analysis, insights, and business recommendations are available in the [`report/`](report/) folder.
+Analisis lengkap, insight, dan rekomendasi bisnis tersedia di folder [`report/`](report/).
 
 ## 📊 Dashboard
 
-The interactive dashboard is available in the [`dashboard/`](dashboard/) folder.
+Dashboard interaktif tersedia di folder [`dashboard/`](dashboard/).
 
-## 🚀 Getting Started
+## 🚀 Cara Menjalankan
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/SNSetyowati/ETA-Prediction-for-a-Food-Delivery-Company.git
 cd ETA-Prediction-for-a-Food-Delivery-Company
 
-# Create a virtual environment and install dependencies
+# Buat virtual environment dan install library
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-# Launch Jupyter
+# Jalankan Jupyter
 jupyter notebook
 ```
 
-## 🛠️ Tools & Technologies
+## 🛠️ Tools & Teknologi
 
 Python · Pandas · NumPy · Scikit-learn · XGBoost · LightGBM · Matplotlib · Seaborn · Jupyter · Streamlit / Tableau
 
