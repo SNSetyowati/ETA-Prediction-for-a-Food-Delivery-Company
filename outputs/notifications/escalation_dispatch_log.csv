@@ -1,0 +1,43 @@
+logged_at,Order_ID,Risk_Category,Risk_Score,recipient_role,to,subject,status,draft
+2026-09-26 07:14:01,ZC-0040,High,60,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0040 (Metropolitian),drafted,outbox/ZC-0040_cs_lead.eml
+2026-09-26 07:14:01,ZC-0040,High,60,customer,customer+zc-0040@example.com,Update on your order ZC-0040: new estimated arrival 22:20,drafted,outbox/ZC-0040_customer.eml
+2026-09-26 07:14:01,ZC-0040,High,60,driver,driver+vadres20del01@example.com,[HIGH] Delay risk on ZC-0040 - route advice,drafted,outbox/ZC-0040_driver.eml
+2026-09-26 07:14:01,ZC-0035,High,60,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0035 (Metropolitian),drafted,outbox/ZC-0035_cs_lead.eml
+2026-09-26 07:14:01,ZC-0035,High,60,customer,customer+zc-0035@example.com,Update on your order ZC-0035: new estimated arrival 21:37,drafted,outbox/ZC-0035_customer.eml
+2026-09-26 07:14:01,ZC-0035,High,60,driver,driver+kocres01del01@example.com,[HIGH] Delay risk on ZC-0035 - route advice,drafted,outbox/ZC-0035_driver.eml
+2026-09-26 07:14:01,ZC-0026,High,60,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0026 (Metropolitian),drafted,outbox/ZC-0026_cs_lead.eml
+2026-09-26 07:14:01,ZC-0026,High,60,customer,customer+zc-0026@example.com,Update on your order ZC-0026: new estimated arrival 19:55,drafted,outbox/ZC-0026_customer.eml
+2026-09-26 07:14:01,ZC-0026,High,60,driver,driver+chenres19del03@example.com,[HIGH] Delay risk on ZC-0026 - route advice,drafted,outbox/ZC-0026_driver.eml
+2026-09-26 07:14:01,ZC-0029,High,60,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0029 (Metropolitian),drafted,outbox/ZC-0029_cs_lead.eml
+2026-09-26 07:14:01,ZC-0029,High,60,customer,customer+zc-0029@example.com,Update on your order ZC-0029: new estimated arrival 20:32,drafted,outbox/ZC-0029_customer.eml
+2026-09-26 07:14:01,ZC-0029,High,60,driver,driver+ranchires18del01@example.com,[HIGH] Delay risk on ZC-0029 - route advice,drafted,outbox/ZC-0029_driver.eml
+2026-09-26 07:14:01,ZC-0036,High,60,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0036 (Metropolitian),drafted,outbox/ZC-0036_cs_lead.eml
+2026-09-26 07:14:01,ZC-0036,High,60,customer,customer+zc-0036@example.com,Update on your order ZC-0036: new estimated arrival 21:28,drafted,outbox/ZC-0036_customer.eml
+2026-09-26 07:14:01,ZC-0036,High,60,driver,driver+kolres17del03@example.com,[HIGH] Delay risk on ZC-0036 - route advice,drafted,outbox/ZC-0036_driver.eml
+2026-09-26 07:14:01,ZC-0041,High,60,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0041 (Metropolitian),drafted,outbox/ZC-0041_cs_lead.eml
+2026-09-26 07:14:01,ZC-0041,High,60,customer,customer+zc-0041@example.com,Update on your order ZC-0041: new estimated arrival 22:17,drafted,outbox/ZC-0041_customer.eml
+2026-09-26 07:14:01,ZC-0041,High,60,driver,driver+coimbres19del03@example.com,[HIGH] Delay risk on ZC-0041 - route advice,drafted,outbox/ZC-0041_driver.eml
+2026-09-26 07:14:01,ZC-0034,High,60,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0034 (Metropolitian),drafted,outbox/ZC-0034_cs_lead.eml
+2026-09-26 07:14:01,ZC-0034,High,60,customer,customer+zc-0034@example.com,Update on your order ZC-0034: new estimated arrival 21:08,drafted,outbox/ZC-0034_customer.eml
+2026-09-26 07:14:01,ZC-0034,High,60,driver,driver+kolres12del01@example.com,[HIGH] Delay risk on ZC-0034 - route advice,drafted,outbox/ZC-0034_driver.eml
+2026-09-26 07:14:01,ZC-0010,High,50,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0010 (Semi-Urban),drafted,outbox/ZC-0010_cs_lead.eml
+2026-09-26 07:14:01,ZC-0010,High,50,customer,customer+zc-0010@example.com,Update on your order ZC-0010: new estimated arrival 14:27,drafted,outbox/ZC-0010_customer.eml
+2026-09-26 07:14:01,ZC-0010,High,50,driver,driver+bangres010del01@example.com,[HIGH] Delay risk on ZC-0010 - route advice,drafted,outbox/ZC-0010_driver.eml
+2026-09-26 07:14:01,ZC-0031,High,50,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0031 (Metropolitian),drafted,outbox/ZC-0031_cs_lead.eml
+2026-09-26 07:14:01,ZC-0031,High,50,customer,customer+zc-0031@example.com,Update on your order ZC-0031: new estimated arrival 20:56,drafted,outbox/ZC-0031_customer.eml
+2026-09-26 07:14:01,ZC-0031,High,50,driver,driver+ranchires08del01@example.com,[HIGH] Delay risk on ZC-0031 - route advice,drafted,outbox/ZC-0031_driver.eml
+2026-09-26 07:14:01,ZC-0032,High,50,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0032 (Metropolitian),drafted,outbox/ZC-0032_cs_lead.eml
+2026-09-26 07:14:01,ZC-0032,High,50,customer,customer+zc-0032@example.com,Update on your order ZC-0032: new estimated arrival 21:13,drafted,outbox/ZC-0032_customer.eml
+2026-09-26 07:14:01,ZC-0032,High,50,driver,driver+surres03del03@example.com,[HIGH] Delay risk on ZC-0032 - route advice,drafted,outbox/ZC-0032_driver.eml
+2026-09-26 07:14:01,ZC-0039,High,50,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0039 (Metropolitian),drafted,outbox/ZC-0039_cs_lead.eml
+2026-09-26 07:14:01,ZC-0039,High,50,customer,customer+zc-0039@example.com,Update on your order ZC-0039: new estimated arrival 22:12,drafted,outbox/ZC-0039_customer.eml
+2026-09-26 07:14:01,ZC-0039,High,50,driver,driver+mysres09del02@example.com,[HIGH] Delay risk on ZC-0039 - route advice,drafted,outbox/ZC-0039_driver.eml
+2026-09-26 07:14:01,ZC-0008,High,50,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0008 (Metropolitian),drafted,outbox/ZC-0008_cs_lead.eml
+2026-09-26 07:14:01,ZC-0008,High,50,customer,customer+zc-0008@example.com,Update on your order ZC-0008: new estimated arrival 11:59,drafted,outbox/ZC-0008_customer.eml
+2026-09-26 07:14:01,ZC-0008,High,50,driver,driver+japres13del01@example.com,[HIGH] Delay risk on ZC-0008 - route advice,drafted,outbox/ZC-0008_driver.eml
+2026-09-26 07:14:01,ZC-0033,High,50,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0033 (Metropolitian),drafted,outbox/ZC-0033_cs_lead.eml
+2026-09-26 07:14:01,ZC-0033,High,50,customer,customer+zc-0033@example.com,Update on your order ZC-0033: new estimated arrival 21:01,drafted,outbox/ZC-0033_customer.eml
+2026-09-26 07:14:01,ZC-0033,High,50,driver,driver+mysres13del01@example.com,[HIGH] Delay risk on ZC-0033 - route advice,drafted,outbox/ZC-0033_driver.eml
+2026-09-26 07:14:01,ZC-0027,High,50,cs_lead,cs-lead@example.com,[HIGH] Delivery risk alert - ZC-0027 (Urban),drafted,outbox/ZC-0027_cs_lead.eml
+2026-09-26 07:14:01,ZC-0027,High,50,customer,customer+zc-0027@example.com,Update on your order ZC-0027: new estimated arrival 19:49,drafted,outbox/ZC-0027_customer.eml
+2026-09-26 07:14:01,ZC-0027,High,50,driver,driver+coimbres03del02@example.com,[HIGH] Delay risk on ZC-0027 - route advice,drafted,outbox/ZC-0027_driver.eml

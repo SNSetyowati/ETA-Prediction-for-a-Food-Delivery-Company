@@ -1,0 +1,26 @@
+From: eta-alerts@example.com
+To: driver+surres03del03@example.com
+Subject: [HIGH] Delay risk on ZC-0032 - route advice
+X-Order-ID: ZC-0032
+X-Recipient-Role: driver
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hi SURRES03DEL03,
+
+Order ZC-0032 is at High risk of running late.
+
+  Conditions      : Sandstorms weather, Jam traffic, Normal Day
+  Predicted ETA   : 38 min (target arrival 21:13)
+  Trip            : 13.7 km, heading north-east
+
+Route recommendation:
+  1. Traffic is jammed: avoid main arterial roads and flyovers, follow live-traffic rerouting in navigation and prefer inner/local roads.
+  2. Sandstorms: reduce speed, keep headlights on and avoid flood- or debris-prone underpasses. Safety comes before the ETA.
+  3. Long trip (10 km+): check fuel/charge before leaving the restaurant.
+
+Open route in maps: https://www.google.com/maps/dir/?api=1&origin=21.186884,72.793616&destination=21.276884,72.883616&travelmode=driving
+
+Ride safe.
+-- Zamato Operations

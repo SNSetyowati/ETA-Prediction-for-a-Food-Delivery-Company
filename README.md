@@ -40,6 +40,8 @@ ETA-Prediction-for-a-Food-Delivery-Company/
 ├── src/                # Script Python (preprocessing, fitur, training)
 ├── models/             # Model yang sudah dilatih
 ├── outputs/            # Hasil prediksi ETA & risiko untuk pesanan aktif
+│   └── notifications/  # Draf email eskalasi & log pesanan lainnya
+├── tests/              # Unit test (pytest)
 ├── report/             # Laporan akhir / presentasi (PDF, PPT, grafik)
 ├── dashboard/          # File dashboard (Tableau / Power BI / Looker Studio / Streamlit)
 ├── requirements.txt    # Daftar library Python
@@ -101,6 +103,29 @@ Skor dibatasi maksimal 100. **Kategori:** Low (0–29) · Medium (30–49) · Hi
 ```bash
 # Letakkan kedua file Excel di data/raw/, lalu:
 python src/predict_eta.py
+```
+
+## 📧 Notifikasi Eskalasi
+
+Script `src/notify.py` membaca `outputs/active_deliveries_ZC_predicted.csv`. Untuk setiap pesanan **High / Critical** dibuat tiga email:
+
+| Penerima | Isi |
+|---|---|
+| Customer Service Lead | Alert risiko: skor, penyebab (cuaca, lalu lintas, festival), ETA, data driver, saran tindakan |
+| Pelanggan | Pemberitahuan keterlambatan dan perkiraan jam tiba baru (tanpa detail risiko internal) |
+| Driver | Alert risiko + rekomendasi rute: arah tujuan, link Google Maps, dan saran berdasarkan lalu lintas, cuaca, festival, dan jumlah pesanan |
+
+Pesanan lainnya (Low / Medium) dicatat di `outputs/notifications/non_escalated_orders.log.csv`.
+
+```bash
+python src/notify.py          # dry run: simpan draf .eml di outputs/notifications/outbox/
+python src/notify.py --send   # kirim via SMTP
+```
+
+Mode `--send` memerlukan `SMTP_HOST` (opsional `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`), `CS_LEAD_EMAIL`, dan alamat pelanggan/driver di `data/raw/contacts.csv` (kolom `Order_ID, customer_email, driver_email`). Alamat yang tidak tersedia memakai placeholder `@example.com` dan tidak akan dikirim. Status setiap email tercatat di `outputs/notifications/escalation_dispatch_log.csv`.
+
+```bash
+python -m pytest tests   # jalankan unit test
 ```
 
 ## 🏆 Hasil
