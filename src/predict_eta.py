@@ -26,6 +26,8 @@ from openpyxl.utils import get_column_letter
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
+from arrival import estimated_arrival
+
 ROOT = Path(__file__).resolve().parents[1]
 HIST_PATH = ROOT / "data/raw/Capstone_Team1_CleanedData_v1_Zamato_Delivery_Operation.xlsx"
 HIST_SHEET = "Zamato Delivery Filtering"
@@ -181,8 +183,8 @@ scored = add_risk(active)
 scored["Predicted_ETA_min"] = np.round(model.predict(Xa[FEATURES]), 1)
 scored["ETA_Updated_At"] = run_ts
 scored["Distance_km"] = Xa["distance_km"].round(2)
-ordered_dt = pd.to_datetime(scored["Order_Date"].astype(str) + " " + scored["Time_Ordered"].astype(str))
-scored["Estimated_Arrival"] = (ordered_dt + pd.to_timedelta(scored["Predicted_ETA_min"], unit="m")).dt.strftime("%H:%M")
+scored["Estimated_Arrival"] = estimated_arrival(scored["Order_Date"], scored["Time_Ordered"],
+                                                scored["Time_Order_picked"], scored["Predicted_ETA_min"])
 
 backtest = scored[["Order_ID", "Predicted_ETA_min", "Risk_Category"]].merge(truth, on="Order_ID")
 bt_mae = mean_absolute_error(backtest["Actual_Time_taken_min"], backtest["Predicted_ETA_min"])
