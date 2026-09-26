@@ -1,0 +1,20 @@
+From: eta-alerts@example.com
+To: customer+zc-0034@example.com
+Subject: Update on your order ZC-0034: new estimated arrival 21:02
+X-Order-ID: ZC-0034
+X-Recipient-Role: customer
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hi there,
+
+Thank you for your order ZC-0034. Because of heavy traffic and stormy weather in your area, your delivery
+may take a little longer than usual.
+
+  Updated estimated arrival: around 21:02 (about 23 minutes after ordering)
+
+Your rider is on the way and we are keeping a close eye on your order. We're sorry for the
+wait, and thank you for your patience.
+
+-- Zamato Customer Care

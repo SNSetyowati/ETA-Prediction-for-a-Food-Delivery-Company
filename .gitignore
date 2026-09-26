@@ -17,3 +17,4 @@ models/*.joblib
 
 # OS
 .DS_Store
+.pytest_cache/

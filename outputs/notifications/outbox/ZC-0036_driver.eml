@@ -1,0 +1,26 @@
+From: eta-alerts@example.com
+To: driver+kolres17del03@example.com
+Subject: [HIGH] Delay risk on ZC-0036 - route advice
+X-Order-ID: ZC-0036
+X-Recipient-Role: driver
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hi KOLRES17DEL03,
+
+Order ZC-0036 is at High risk of running late.
+
+  Conditions      : Cloudy weather, Jam traffic, Normal Day
+  Predicted ETA   : 28 min (target arrival 21:22)
+  Trip            : 9.1 km, heading north-east
+
+Route recommendation:
+  1. Traffic is jammed: avoid main arterial roads and flyovers, follow live-traffic rerouting in navigation and prefer inner/local roads.
+  2. Cloudy conditions: keep extra distance and watch for sudden gusts or rain.
+  3. You carry 1 other order(s): if the stops allow, deliver ZC-0036 first to protect its ETA.
+
+Open route in maps: https://www.google.com/maps/dir/?api=1&origin=22.569358,88.433452&destination=22.629358,88.493452&travelmode=driving
+
+Ride safe.
+-- Zamato Operations

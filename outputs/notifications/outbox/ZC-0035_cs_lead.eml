@@ -1,0 +1,28 @@
+From: eta-alerts@example.com
+To: cs-lead@example.com
+Subject: [HIGH] Delivery risk alert - ZC-0035 (Metropolitian)
+X-Order-ID: ZC-0035
+X-Recipient-Role: cs_lead
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hi CS Lead,
+
+Order ZC-0035 has been flagged as High risk and may arrive late.
+
+  Risk score        : 60 / 100
+  Risk drivers      : Weather: Cloudy; Traffic: Jam; Multiple deliveries: 1
+  Weather           : Cloudy (Adverse)
+  Road traffic      : Jam (Severe)
+  Festival / event  : Normal Day
+  Predicted ETA     : 37 min (estimated arrival 21:21)
+  Ordered / picked  : 20:45:00 / 21:00:00
+  Driver            : KOCRES01DEL01 (scooter, 1 other order(s))
+  Distance          : 17.2 km
+
+Suggested actions:
+  - The customer and the driver have each been emailed separately.
+  - Monitor this order and be ready to handle a complaint or offer a voucher if it runs late.
+
+-- ETA Prediction System

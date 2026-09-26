@@ -1,0 +1,25 @@
+From: eta-alerts@example.com
+To: driver+bangres010del01@example.com
+Subject: [HIGH] Delay risk on ZC-0010 - route advice
+X-Order-ID: ZC-0010
+X-Recipient-Role: driver
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hi BANGRES010DEL01,
+
+Order ZC-0010 is at High risk of running late.
+
+  Conditions      : Sunny weather, High traffic, Normal Day
+  Predicted ETA   : 52 min (target arrival 14:21)
+  Trip            : 6.2 km, heading north-east
+
+Route recommendation:
+  1. Heavy traffic: take the fastest live-traffic route and avoid known junction bottlenecks.
+  2. You carry 3 other order(s): if the stops allow, deliver ZC-0010 first to protect its ETA.
+
+Open route in maps: https://www.google.com/maps/dir/?api=1&origin=12.933298,77.614293&destination=12.973298,77.654293&travelmode=driving
+
+Ride safe.
+-- Zamato Operations
