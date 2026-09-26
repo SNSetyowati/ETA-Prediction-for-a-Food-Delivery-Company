@@ -6,7 +6,7 @@ Memprediksi waktu pengiriman makanan (ETA) menggunakan machine learning untuk me
 
 ## 📌 Gambaran Proyek
 
-Estimasi waktu pengiriman yang akurat sangat penting bagi platform food delivery. ETA yang terlalu cepat membuat pelanggan kecewa, sedangkan ETA yang terlalu lama dapat menurunkan konversi pesanan. Proyek ini membangun model regresi untuk memprediksi berapa lama sebuah pesanan akan sampai, berdasarkan faktor pesanan, restoran, kurir, dan lingkungan.
+Pengiriman yang cepat memang membuat pelanggan puas, tetapi yang tidak kalah penting adalah **estimasi waktu (ETA) yang akurat**. Jika aplikasi menjanjikan waktu tiba lebih cepat daripada kenyataannya (misalnya ETA 20 menit, tetapi pesanan baru tiba dalam 40 menit), pelanggan akan merasa kecewa karena ekspektasinya tidak terpenuhi. Sebaliknya, jika ETA yang ditampilkan jauh lebih lama daripada waktu sebenarnya, pelanggan bisa mengurungkan niat memesan sehingga konversi pesanan menurun. Proyek ini membangun model regresi untuk memprediksi berapa lama sebuah pesanan akan sampai, berdasarkan faktor pesanan, restoran, kurir, dan lingkungan.
 
 ## 🎯 Tujuan
 
