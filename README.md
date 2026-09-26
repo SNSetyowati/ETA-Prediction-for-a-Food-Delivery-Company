@@ -128,6 +128,17 @@ Mode `--send` memerlukan `SMTP_HOST` (opsional `SMTP_PORT`, `SMTP_USER`, `SMTP_P
 python -m pytest tests   # jalankan unit test
 ```
 
+## 🖥️ Dashboard Web
+
+`dashboard/index.html` adalah dashboard statis (tanpa build) yang menampilkan KPI, distribusi kategori risiko, lalu lintas & cuaca, serta tabel antrian eskalasi. Filter kota, kategori risiko, dan Order ID berlaku untuk seluruh isi dashboard. Mendukung mode terang/gelap dan layar HP.
+
+```bash
+python src/build_dashboard.py      # perbarui dashboard/data.js dari outputs/
+python -m http.server -d dashboard # buka http://localhost:8000
+```
+
+**Deploy ke Vercel:** `vercel.json` sudah mengatur `dashboard/` sebagai output statis. Hubungkan repo ini di Vercel (Add New Project → import repo), maka setiap pull request otomatis mendapat URL preview.
+
 ## 🏆 Hasil
 
 | Model | MAE (menit) | RMSE (menit) | R² |

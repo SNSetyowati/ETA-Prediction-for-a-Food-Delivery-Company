@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETA Risk Dashboard</title>
+<meta name="description" content="Predicted ETA and delivery risk for active Zamato orders (batch ZC).">
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --grid: #e1e0d9;
+    --axis: #c3c2b7;
+    --border: rgba(11, 11, 11, 0.10);
+    --series-1: #2a78d6;
+    --hover-wash: rgba(11, 11, 11, 0.04);
+    --status-good: #0ca30c;
+    --status-warning: #fab219;
+    --status-serious: #ec835a;
+    --status-critical: #d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --grid: #2c2c2a;
+      --axis: #383835;
+      --border: rgba(255, 255, 255, 0.10);
+      --series-1: #3987e5;
+      --hover-wash: rgba(255, 255, 255, 0.06);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --series-1: #3987e5;
+    --hover-wash: rgba(255, 255, 255, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text-primary);
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
+  header h1 { font-size: 22px; margin: 0 0 4px; }
+  header p { margin: 0; color: var(--text-secondary); }
+  .filters { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; align-items: end; }
+  .filters label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--text-secondary); }
+  select, input[type="search"] {
+    font: inherit; color: var(--text-primary); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px; min-width: 160px;
+  }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  .tile .label { color: var(--text-secondary); font-size: 13px; }
+  .tile .value { font-size: 30px; font-weight: 600; margin-top: 2px; }
+  .tile .sub { color: var(--text-muted); font-size: 12px; }
+  .charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-top: 12px; }
+  .card h2 { font-size: 15px; margin: 0 0 2px; }
+  .card .hint { color: var(--text-muted); font-size: 12px; margin: 0 0 12px; }
+  .bar-row { display: grid; grid-template-columns: 110px 1fr 36px; align-items: center; gap: 8px; padding: 3px 0; border-radius: 6px; outline: none; }
+  .bar-row:hover, .bar-row:focus-visible { background: var(--hover-wash); }
+  .bar-row .name { color: var(--text-secondary); font-size: 13px; display: flex; align-items: center; gap: 6px; }
+  .bar-row .track { height: 14px; position: relative; border-left: 1px solid var(--axis); }
+  .bar-row .fill { height: 100%; border-radius: 0 4px 4px 0; background: var(--series-1); }
+  .bar-row .count { text-align: right; font-variant-numeric: tabular-nums; }
+  .badge { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; font-size: 12px; white-space: nowrap; }
+  .badge .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .table-card { margin-top: 12px; }
+  .table-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .toggle button { font: inherit; font-size: 13px; padding: 6px 12px; border: 0; background: transparent; color: var(--text-secondary); cursor: pointer; }
+  .toggle button[aria-pressed="true"] { background: var(--hover-wash); color: var(--text-primary); font-weight: 600; }
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  th { color: var(--text-secondary); font-weight: 600; white-space: nowrap; position: sticky; top: 0; background: var(--surface); }
+  td.nowrap { white-space: nowrap; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tbody tr:hover { background: var(--hover-wash); }
+  .muted { color: var(--text-muted); }
+  .empty { padding: 24px; text-align: center; color: var(--text-muted); }
+  #tooltip {
+    position: fixed; pointer-events: none; z-index: 10; display: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); font-size: 12px;
+  }
+  #tooltip strong { display: block; font-size: 14px; }
+  footer { margin-top: 20px; color: var(--text-muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>ETA Risk Dashboard</h1>
+    <p id="subtitle">Active deliveries, batch ZC</p>
+  </header>
+
+  <div class="filters" role="group" aria-label="Filters">
+    <label>City <select id="f-city"><option value="">All cities</option></select></label>
+    <label>Risk category <select id="f-risk"><option value="">All categories</option></select></label>
+    <label>Order ID <input id="f-search" type="search" placeholder="e.g. ZC-0010"></label>
+  </div>
+
+  <section class="tiles" aria-label="Key figures">
+    <div class="card tile"><div class="label">Orders shown</div><div class="value" id="k-orders">–</div><div class="sub" id="k-orders-sub"></div></div>
+    <div class="card tile"><div class="label">Need escalation (High + Critical)</div><div class="value" id="k-esc">–</div><div class="sub" id="k-esc-sub"></div></div>
+    <div class="card tile"><div class="label">Average predicted ETA</div><div class="value" id="k-eta">–</div><div class="sub" id="k-eta-sub"></div></div>
+    <div class="card tile"><div class="label">Model error (backtest MAE)</div><div class="value" id="k-mae">–</div><div class="sub" id="k-mae-sub"></div></div>
+  </section>
+
+  <section class="charts">
+    <div class="card"><h2>Orders by risk category</h2><p class="hint">Risk score: weather + traffic + festival + extra deliveries</p><div id="c-risk"></div></div>
+    <div class="card"><h2>Orders by road traffic</h2><p class="hint">Road_traffic_density label</p><div id="c-traffic"></div></div>
+    <div class="card"><h2>Orders by weather</h2><p class="hint">Weather_conditions label</p><div id="c-weather"></div></div>
+  </section>
+
+  <section class="card table-card">
+    <div class="table-head">
+      <div><h2>Orders</h2><p class="hint" id="t-hint"></p></div>
+      <div class="toggle" role="group" aria-label="Table view">
+        <button type="button" data-view="escalated" aria-pressed="true">Escalation queue</button>
+        <button type="button" data-view="all" aria-pressed="false">All orders</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Order</th><th>City</th><th>Weather</th><th>Traffic</th><th>Festival</th>
+          <th class="num">ETA (min)</th><th>Pickup → arrival</th><th class="num">Risk score</th><th>Category</th><th>Risk drivers</th><th>Emails</th>
+        </tr></thead>
+        <tbody id="t-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer id="footer"></footer>
+</main>
+<div id="tooltip" role="tooltip"></div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const DATA = window.ETA_DATA;
+  const RISK = [
+    { key: "Critical", color: "var(--status-critical)", icon: "▲" },
+    { key: "High", color: "var(--status-serious)", icon: "▲" },
+    { key: "Medium", color: "var(--status-warning)", icon: "●" },
+    { key: "Low", color: "var(--status-good)", icon: "●" },
+  ];
+  const TRAFFIC = ["Severe", "Heavy", "Moderate", "Smooth"];
+  const WEATHER = ["Adverse", "Moderate", "Clear"];
+  const ESCALATE = new Set(["High", "Critical"]);
+  const state = { city: "", risk: "", q: "", view: "escalated" };
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, cls, text) => {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  };
+  const cityName = (c) => c === "Metropolitian" ? "Metropolitan" : c;
+
+  function badge(cat) {
+    const r = RISK.find((x) => x.key === cat);
+    const b = el("span", "badge");
+    const d = el("span", "dot");
+    d.style.background = r.color;
+    b.append(d, document.createTextNode(cat));
+    return b;
+  }
+
+  // Filters
+  [...new Set(DATA.orders.map((o) => o.City))].sort().forEach((c) => {
+    const o = el("option", null, cityName(c)); o.value = c; $("f-city").append(o);
+  });
+  RISK.forEach((r) => { const o = el("option", null, r.key); o.value = r.key; $("f-risk").append(o); });
+  $("f-city").addEventListener("change", (e) => { state.city = e.target.value; render(); });
+  $("f-risk").addEventListener("change", (e) => { state.risk = e.target.value; render(); });
+  $("f-search").addEventListener("input", (e) => { state.q = e.target.value.trim().toUpperCase(); render(); });
+  document.querySelectorAll(".toggle button").forEach((btn) => btn.addEventListener("click", () => {
+    state.view = btn.dataset.view;
+    document.querySelectorAll(".toggle button").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+    render();
+  }));
+
+  // Tooltip
+  const tip = $("tooltip");
+  function showTip(evt, value, label) {
+    tip.replaceChildren(el("strong", null, value), el("span", "muted", label));
+    tip.style.display = "block";
+    const rect = evt.currentTarget.getBoundingClientRect();
+    const x = evt.clientX !== undefined && evt.clientX ? evt.clientX : rect.left + rect.width / 2;
+    const y = evt.clientY !== undefined && evt.clientY ? evt.clientY : rect.top;
+    tip.style.left = Math.min(x + 12, window.innerWidth - tip.offsetWidth - 8) + "px";
+    tip.style.top = (y - tip.offsetHeight - 10) + "px";
+  }
+  const hideTip = () => { tip.style.display = "none"; };
+
+  function bars(container, rows, total) {
+    container.replaceChildren();
+    const max = Math.max(1, ...rows.map((r) => r.count));
+    rows.forEach((r) => {
+      const row = el("div", "bar-row");
+      row.tabIndex = 0;
+      const name = el("div", "name");
+      if (r.badge) name.append(badge(r.name)); else name.textContent = r.name;
+      const track = el("div", "track");
+      const fill = el("div", "fill");
+      fill.style.width = (r.count / max * 100) + "%";
+      if (r.color) fill.style.background = r.color;
+      if (r.count === 0) fill.style.display = "none";
+      track.append(fill);
+      row.append(name, track, el("div", "count", String(r.count)));
+      const share = total ? Math.round(r.count / total * 100) : 0;
+      const label = `${r.name} · ${share}% of shown orders`;
+      const text = `${r.count} order${r.count === 1 ? "" : "s"}`;
+      row.setAttribute("aria-label", `${r.name}: ${text}`);
+      row.addEventListener("pointermove", (e) => showTip(e, text, label));
+      row.addEventListener("focus", (e) => showTip(e, text, label));
+      row.addEventListener("pointerleave", hideTip);
+      row.addEventListener("blur", hideTip);
+      container.append(row);
+    });
+  }
+
+  function emailsCell(o) {
+    const roles = Object.keys(o.Emails || {});
+    if (!roles.length) return el("span", "muted", "Logged only");
+    const names = { cs_lead: "CS lead", customer: "customer", driver: "driver" };
+    const statuses = [...new Set(Object.values(o.Emails))];
+    const cell = el("span", null, `${roles.length} ${statuses.join("/")}`);
+    cell.title = roles.map((r) => `${names[r] || r}: ${o.Emails[r]}`).join("\n");
+    return cell;
+  }
+
+  function render() {
+    const filtered = DATA.orders.filter((o) =>
+      (!state.city || o.City === state.city) &&
+      (!state.risk || o.Risk_Category === state.risk) &&
+      (!state.q || o.Order_ID.toUpperCase().includes(state.q)));
+    const esc = filtered.filter((o) => ESCALATE.has(o.Risk_Category));
+    const n = filtered.length;
+
+    $("k-orders").textContent = n;
+    $("k-orders-sub").textContent = `of ${DATA.orders.length} active orders`;
+    $("k-esc").textContent = esc.length;
+    $("k-esc-sub").textContent = n ? `${Math.round(esc.length / n * 100)}% of shown orders` : "";
+    const avg = n ? filtered.reduce((s, o) => s + o.Predicted_ETA_min, 0) / n : null;
+    $("k-eta").textContent = avg === null ? "–" : `${avg.toFixed(1)} min`;
+    $("k-eta-sub").textContent = n ? `max ${Math.max(...filtered.map((o) => o.Predicted_ETA_min)).toFixed(1)} min` : "";
+    const m = DATA.metrics;
+    $("k-mae").textContent = `${m.backtest_mae.toFixed(1)} min`;
+    $("k-mae-sub").textContent = `hold-out MAE ${m.holdout_mae.toFixed(2)} · R² ${m.holdout_r2.toFixed(2)} · baseline ${m.baseline_mae.toFixed(2)}`;
+
+    bars($("c-risk"), RISK.map((r) => ({ name: r.key, badge: true, color: r.color,
+      count: filtered.filter((o) => o.Risk_Category === r.key).length })), n);
+    bars($("c-traffic"), TRAFFIC.map((t) => ({ name: t, count: filtered.filter((o) => o.Traffic_Label === t).length })), n);
+    bars($("c-weather"), WEATHER.map((w) => ({ name: w, count: filtered.filter((o) => o.Weather_Label === w).length })), n);
+
+    const rows = (state.view === "escalated" ? esc : filtered).slice()
+      .sort((a, b) => b.Risk_Score - a.Risk_Score || b.Predicted_ETA_min - a.Predicted_ETA_min);
+    $("t-hint").textContent = state.view === "escalated"
+      ? `${rows.length} High/Critical order(s): CS lead, customer and driver emails drafted`
+      : `${rows.length} order(s), highest risk first`;
+    const body = $("t-body");
+    body.replaceChildren();
+    if (!rows.length) {
+      const tr = el("tr"); const td = el("td", "empty", "No orders match these filters.");
+      td.colSpan = 11; tr.append(td); body.append(tr);
+    }
+    rows.forEach((o) => {
+      const tr = el("tr");
+      const cat = el("td"); cat.append(badge(o.Risk_Category));
+      const emails = el("td"); emails.append(emailsCell(o));
+      tr.append(
+        el("td", "nowrap", o.Order_ID),
+        el("td", null, cityName(o.City)),
+        el("td", null, `${o.Weather_conditions} (${o.Weather_Label})`),
+        el("td", null, `${o.Road_traffic_density} (${o.Traffic_Label})`),
+        el("td", null, o.Festival_Label),
+        el("td", "num", o.Predicted_ETA_min.toFixed(1)),
+        el("td", "nowrap", `${o.Time_Order_picked.slice(0, 5)} → ${o.Estimated_Arrival}`),
+        el("td", "num", String(o.Risk_Score)),
+        cat,
+        el("td", null, o.Risk_Drivers),
+        emails,
+      );
+      body.append(tr);
+    });
+  }
+
+  $("subtitle").textContent = `Active deliveries, batch ZC · ETA updated ${DATA.eta_updated_at}`;
+  $("footer").textContent = `Source: ${DATA.generated_from}. LightGBM trained on ${DATA.metrics.training_rows.toLocaleString("en-US")} historical deliveries. Emails are drafts; none were sent.`;
+  render();
+})();
+</script>
+</body>
+</html>
