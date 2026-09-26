@@ -85,6 +85,8 @@ Salinan CSV (`outputs/*.csv`) disediakan untuk kebutuhan dashboard.
 
 **Predicted ETA** – model LightGBM dengan fitur: jarak (haversine), waktu tunggu pickup, jam pemesanan, cuaca, lalu lintas, festival, kota, jenis pesanan & kendaraan, kondisi kendaraan, multiple deliveries, serta usia & rating kurir. Pesanan historis yang sama dengan batch aktif dikeluarkan dari data latih agar backtest jujur.
 
+**Estimated Arrival** – `Time_Order_picked + Predicted_ETA_min`, dibulatkan ke menit terdekat. `Time_taken` historis dihitung sejak pickup, bukan sejak order (pickup setelah tengah malam dihitung ke hari berikutnya).
+
 **Risk Score** – mengikuti aturan skor risiko historis (cocok 100% pada 40.088 baris):
 
 | Faktor | Poin |

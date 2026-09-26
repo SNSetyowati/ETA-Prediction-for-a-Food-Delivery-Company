@@ -1,15 +1,15 @@
 Order_ID,Delivery_person_ID,City,Time_Ordered,Time_Order_picked,Weather_conditions,Weather_Label,Road_traffic_density,Traffic_Label,Festival,Festival_Label,multiple_deliveries,Type_of_vehicle,Distance_km,Predicted_ETA_min,Estimated_Arrival,Risk_Score,Risk_Category,Risk_Drivers
-ZC-0040,VADRES20DEL01,Metropolitian,21:35:00,21:40:00,Fog,Adverse,Jam,Severe,No,Normal Day,1,scooter,10.6,39.7,22:14,60,High,Weather: Fog; Traffic: Jam; Multiple deliveries: 1
-ZC-0035,KOCRES01DEL01,Metropolitian,20:45:00,21:00:00,Cloudy,Adverse,Jam,Severe,No,Normal Day,1,scooter,17.17,36.8,21:21,60,High,Weather: Cloudy; Traffic: Jam; Multiple deliveries: 1
-ZC-0026,CHENRES19DEL03,Metropolitian,19:10:00,19:20:00,Cloudy,Adverse,Jam,Severe,No,Normal Day,1,motorcycle,13.97,35.4,19:45,60,High,Weather: Cloudy; Traffic: Jam; Multiple deliveries: 1
-ZC-0029,RANCHIRES18DEL01,Metropolitian,19:55:00,20:00:00,Sandstorms,Adverse,Jam,Severe,No,Normal Day,1,motorcycle,10.57,32.5,20:27,60,High,Weather: Sandstorms; Traffic: Jam; Multiple deliveries: 1
-ZC-0036,KOLRES17DEL03,Metropolitian,20:55:00,21:00:00,Cloudy,Adverse,Jam,Severe,No,Normal Day,1,motorcycle,9.08,27.8,21:22,60,High,Weather: Cloudy; Traffic: Jam; Multiple deliveries: 1
-ZC-0041,COIMBRES19DEL03,Metropolitian,21:40:00,21:50:00,Fog,Adverse,Jam,Severe,No,Normal Day,1,scooter,4.67,26.9,22:06,60,High,Weather: Fog; Traffic: Jam; Multiple deliveries: 1
-ZC-0034,KOLRES12DEL01,Metropolitian,20:40:00,20:45:00,Stormy,Adverse,Jam,Severe,No,Normal Day,1,electric_scooter,10.59,22.8,21:02,60,High,Weather: Stormy; Traffic: Jam; Multiple deliveries: 1
-ZC-0010,BANGRES010DEL01,Semi-Urban,13:30:00,13:35:00,Sunny,Clear,High,Heavy,No,Normal Day,3,motorcycle,6.21,51.8,14:21,50,High,Traffic: High; Multiple deliveries: 3
-ZC-0031,RANCHIRES08DEL01,Metropolitian,20:00:00,20:15:00,Fog,Adverse,Jam,Severe,No,Normal Day,0,scooter,10.57,40.8,20:40,50,High,Weather: Fog; Traffic: Jam
-ZC-0032,SURRES03DEL03,Metropolitian,20:20:00,20:35:00,Sandstorms,Adverse,Jam,Severe,No,Normal Day,0,electric_scooter,13.68,37.6,20:57,50,High,Weather: Sandstorms; Traffic: Jam
-ZC-0039,MYSRES09DEL02,Metropolitian,21:25:00,21:35:00,Windy,Moderate,Jam,Severe,No,Normal Day,1,motorcycle,7.77,37.0,22:02,50,High,Weather: Windy; Traffic: Jam; Multiple deliveries: 1
-ZC-0008,JAPRES13DEL01,Metropolitian,11:25:00,11:30:00,Sandstorms,Adverse,High,Heavy,No,Normal Day,1,motorcycle,1.49,28.6,11:53,50,High,Weather: Sandstorms; Traffic: High; Multiple deliveries: 1
-ZC-0033,MYSRES13DEL01,Metropolitian,20:35:00,20:40:00,Stormy,Adverse,Jam,Severe,No,Normal Day,0,electric_scooter,17.1,20.8,20:55,50,High,Weather: Stormy; Traffic: Jam
-ZC-0027,COIMBRES03DEL02,Urban,19:15:00,19:30:00,Windy,Moderate,Jam,Severe,No,Normal Day,1,scooter,7.79,19.1,19:34,50,High,Weather: Windy; Traffic: Jam; Multiple deliveries: 1
+ZC-0040,VADRES20DEL01,Metropolitian,21:35:00,21:40:00,Fog,Adverse,Jam,Severe,No,Normal Day,1,scooter,10.6,39.7,22:20,60,High,Weather: Fog; Traffic: Jam; Multiple deliveries: 1
+ZC-0035,KOCRES01DEL01,Metropolitian,20:45:00,21:00:00,Cloudy,Adverse,Jam,Severe,No,Normal Day,1,scooter,17.17,36.8,21:37,60,High,Weather: Cloudy; Traffic: Jam; Multiple deliveries: 1
+ZC-0026,CHENRES19DEL03,Metropolitian,19:10:00,19:20:00,Cloudy,Adverse,Jam,Severe,No,Normal Day,1,motorcycle,13.97,35.4,19:55,60,High,Weather: Cloudy; Traffic: Jam; Multiple deliveries: 1
+ZC-0029,RANCHIRES18DEL01,Metropolitian,19:55:00,20:00:00,Sandstorms,Adverse,Jam,Severe,No,Normal Day,1,motorcycle,10.57,32.5,20:32,60,High,Weather: Sandstorms; Traffic: Jam; Multiple deliveries: 1
+ZC-0036,KOLRES17DEL03,Metropolitian,20:55:00,21:00:00,Cloudy,Adverse,Jam,Severe,No,Normal Day,1,motorcycle,9.08,27.8,21:28,60,High,Weather: Cloudy; Traffic: Jam; Multiple deliveries: 1
+ZC-0041,COIMBRES19DEL03,Metropolitian,21:40:00,21:50:00,Fog,Adverse,Jam,Severe,No,Normal Day,1,scooter,4.67,26.9,22:17,60,High,Weather: Fog; Traffic: Jam; Multiple deliveries: 1
+ZC-0034,KOLRES12DEL01,Metropolitian,20:40:00,20:45:00,Stormy,Adverse,Jam,Severe,No,Normal Day,1,electric_scooter,10.59,22.8,21:08,60,High,Weather: Stormy; Traffic: Jam; Multiple deliveries: 1
+ZC-0010,BANGRES010DEL01,Semi-Urban,13:30:00,13:35:00,Sunny,Clear,High,Heavy,No,Normal Day,3,motorcycle,6.21,51.8,14:27,50,High,Traffic: High; Multiple deliveries: 3
+ZC-0031,RANCHIRES08DEL01,Metropolitian,20:00:00,20:15:00,Fog,Adverse,Jam,Severe,No,Normal Day,0,scooter,10.57,40.8,20:56,50,High,Weather: Fog; Traffic: Jam
+ZC-0032,SURRES03DEL03,Metropolitian,20:20:00,20:35:00,Sandstorms,Adverse,Jam,Severe,No,Normal Day,0,electric_scooter,13.68,37.6,21:13,50,High,Weather: Sandstorms; Traffic: Jam
+ZC-0039,MYSRES09DEL02,Metropolitian,21:25:00,21:35:00,Windy,Moderate,Jam,Severe,No,Normal Day,1,motorcycle,7.77,37.0,22:12,50,High,Weather: Windy; Traffic: Jam; Multiple deliveries: 1
+ZC-0008,JAPRES13DEL01,Metropolitian,11:25:00,11:30:00,Sandstorms,Adverse,High,Heavy,No,Normal Day,1,motorcycle,1.49,28.6,11:59,50,High,Weather: Sandstorms; Traffic: High; Multiple deliveries: 1
+ZC-0033,MYSRES13DEL01,Metropolitian,20:35:00,20:40:00,Stormy,Adverse,Jam,Severe,No,Normal Day,0,electric_scooter,17.1,20.8,21:01,50,High,Weather: Stormy; Traffic: Jam
+ZC-0027,COIMBRES03DEL02,Urban,19:15:00,19:30:00,Windy,Moderate,Jam,Severe,No,Normal Day,1,scooter,7.79,19.1,19:49,50,High,Weather: Windy; Traffic: Jam; Multiple deliveries: 1
