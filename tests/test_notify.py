@@ -67,6 +67,7 @@ def test_customer_email_hides_internal_risk(orders, contacts):
     body = msg.get_content()
     assert "20:38" in msg["Subject"] and "20:38" in body
     assert "heavy traffic" in body and "festival" in body
+    assert "minutes after pickup at 20:10" in body
     for internal in ("Risk", "risk", "80", "BANGRES12DEL02"):
         assert internal not in body
 

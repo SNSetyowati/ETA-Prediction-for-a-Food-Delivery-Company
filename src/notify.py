@@ -171,7 +171,7 @@ def customer_notification(o, to, sender=DEFAULT_SENDER):
 Thank you for your order {o['Order_ID']}. Because of {reason} in your area, your delivery
 may take a little longer than usual.
 
-  Updated estimated arrival: around {o['Estimated_Arrival']} (about {o['Predicted_ETA_min']:.0f} minutes after ordering)
+  Updated estimated arrival: around {o['Estimated_Arrival']} (about {o['Predicted_ETA_min']:.0f} minutes after pickup at {o['Time_Order_picked'][:5]})
 
 Your rider is on the way and we are keeping a close eye on your order. We're sorry for the
 wait, and thank you for your patience.

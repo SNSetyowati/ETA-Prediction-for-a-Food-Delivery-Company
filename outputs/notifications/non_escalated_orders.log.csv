@@ -1,37 +1,37 @@
 logged_at,Order_ID,Delivery_person_ID,City,Weather_conditions,Road_traffic_density,Festival,Predicted_ETA_min,Estimated_Arrival,Risk_Score,Risk_Category,Risk_Drivers,action
-2026-09-26 05:40:44,ZC-0047,CHENRES12DEL01,Metropolitian,Fog,Low,No,40.0,23:40,40,Medium,Weather: Fog; Multiple deliveries: 2,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0038,MUMRES05DEL02,Metropolitian,Sunny,Jam,No,29.8,21:44,40,Medium,Traffic: Jam; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0009,SURRES11DEL01,Metropolitian,Cloudy,High,No,26.7,12:26,40,Medium,Weather: Cloudy; Traffic: High,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0013,JAPRES13DEL03,Metropolitian,Sandstorms,Medium,No,23.0,17:58,40,Medium,Weather: Sandstorms; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0037,JAPRES09DEL03,Metropolitian,Sunny,Jam,No,22.4,21:22,40,Medium,Traffic: Jam; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0030,COIMBRES01DEL02,Metropolitian,Windy,Jam,No,21.6,20:21,40,Medium,Weather: Windy; Traffic: Jam,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0028,AGRRES04DEL02,Metropolitian,Sunny,Jam,No,18.5,19:33,40,Medium,Traffic: Jam; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0014,COIMBRES09DEL03,Metropolitian,Fog,Medium,No,17.7,17:57,40,Medium,Weather: Fog; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0011,INDORES07DEL01,Metropolitian,Cloudy,Medium,No,17.4,15:27,40,Medium,Weather: Cloudy; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0016,CHENRES19DEL02,Metropolitian,Fog,Medium,No,16.5,18:06,40,Medium,Weather: Fog; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0020,LUDHRES08DEL03,Urban,Fog,Medium,No,14.3,18:44,40,Medium,Weather: Fog; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0045,LUDHRES11DEL01,Urban,Cloudy,Low,No,36.8,23:31,30,Medium,Weather: Cloudy; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0015,COIMBRES15DEL01,Metropolitian,Windy,Medium,No,34.6,18:14,30,Medium,Weather: Windy; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0005,MYSRES09DEL02,Metropolitian,Stormy,Low,No,24.6,11:04,30,Medium,Weather: Stormy; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0007,KOCRES01DEL01,Metropolitian,Sandstorms,Low,No,23.8,11:13,30,Medium,Weather: Sandstorms; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0042,BANGRES17DEL03,Metropolitian,Sandstorms,Low,No,23.2,22:33,30,Medium,Weather: Sandstorms; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0019,SURRES13DEL03,Metropolitian,Cloudy,Medium,No,17.2,18:37,30,Medium,Weather: Cloudy; Traffic: Medium,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0050,SURRES010DEL02,Metropolitian,Sandstorms,Low,No,16.1,00:11,30,Medium,Weather: Sandstorms; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0044,CHENRES18DEL03,Urban,Sandstorms,Low,No,15.7,23:05,30,Medium,Weather: Sandstorms; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0025,PUNERES18DEL02,Urban,Cloudy,Low,No,15.0,00:15,30,Medium,Weather: Cloudy; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0046,BANGRES010DEL02,Urban,Stormy,Low,No,14.5,23:09,30,Medium,Weather: Stormy; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0023,MUMRES20DEL02,Urban,Fog,Medium,No,14.3,18:59,30,Medium,Weather: Fog; Traffic: Medium,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0012,COIMBRES13DEL01,Urban,Sunny,Medium,No,30.4,17:50,20,Low,Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0006,BANGRES17DEL02,Metropolitian,Windy,Low,No,25.1,11:15,20,Low,Weather: Windy; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0004,BANGRES15DEL01,Metropolitian,Windy,Low,No,22.1,10:22,20,Low,Weather: Windy; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0021,MYSRES08DEL02,Metropolitian,Sunny,Medium,No,19.5,18:59,20,Low,Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0049,VADRES01DEL03,Urban,Windy,Low,No,14.5,23:54,20,Low,Weather: Windy; Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0003,MUMRES14DEL01,Urban,Stormy,Low,No,13.4,09:13,20,Low,Weather: Stormy,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0017,BANGRES15DEL02,Metropolitian,Sunny,Medium,No,38.2,18:48,10,Low,Traffic: Medium,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0048,SURRES01DEL02,Metropolitian,Windy,Low,No,24.6,23:59,10,Low,Weather: Windy,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0001,JAPRES010DEL02,Metropolitian,Windy,Low,No,23.8,09:23,10,Low,Weather: Windy,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0018,MYSRES11DEL02,Metropolitian,Sunny,Medium,No,21.6,18:41,10,Low,Traffic: Medium,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0022,MYSRES04DEL01,Urban,Sunny,Medium,No,20.9,19:05,10,Low,Traffic: Medium,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0002,BANGRES12DEL02,Metropolitian,Sunny,Low,No,18.2,09:18,10,Low,Multiple deliveries: 1,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0024,COIMBRES12DEL02,Metropolitian,Windy,Low,No,14.9,00:14,10,Low,Weather: Windy,No escalation - monitor only
-2026-09-26 05:40:44,ZC-0043,BANGRES19DEL02,Metropolitian,Sunny,Low,No,18.5,22:58,0,Low,,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0047,CHENRES12DEL01,Metropolitian,Fog,Low,No,40.0,23:45,40,Medium,Weather: Fog; Multiple deliveries: 2,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0038,MUMRES05DEL02,Metropolitian,Sunny,Jam,No,29.8,22:00,40,Medium,Traffic: Jam; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0009,SURRES11DEL01,Metropolitian,Cloudy,High,No,26.7,12:32,40,Medium,Weather: Cloudy; Traffic: High,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0013,JAPRES13DEL03,Metropolitian,Sandstorms,Medium,No,23.0,18:03,40,Medium,Weather: Sandstorms; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0037,JAPRES09DEL03,Metropolitian,Sunny,Jam,No,22.4,21:27,40,Medium,Traffic: Jam; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0030,COIMBRES01DEL02,Metropolitian,Windy,Jam,No,21.6,20:37,40,Medium,Weather: Windy; Traffic: Jam,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0028,AGRRES04DEL02,Metropolitian,Sunny,Jam,No,18.5,19:44,40,Medium,Traffic: Jam; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0014,COIMBRES09DEL03,Metropolitian,Fog,Medium,No,17.7,18:08,40,Medium,Weather: Fog; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0011,INDORES07DEL01,Metropolitian,Cloudy,Medium,No,17.4,15:32,40,Medium,Weather: Cloudy; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0016,CHENRES19DEL02,Metropolitian,Fog,Medium,No,16.5,18:16,40,Medium,Weather: Fog; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0020,LUDHRES08DEL03,Urban,Fog,Medium,No,14.3,18:54,40,Medium,Weather: Fog; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0045,LUDHRES11DEL01,Urban,Cloudy,Low,No,36.8,23:37,30,Medium,Weather: Cloudy; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0015,COIMBRES15DEL01,Metropolitian,Windy,Medium,No,34.6,18:30,30,Medium,Weather: Windy; Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0005,MYSRES09DEL02,Metropolitian,Stormy,Low,No,24.6,11:10,30,Medium,Weather: Stormy; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0007,KOCRES01DEL01,Metropolitian,Sandstorms,Low,No,23.8,11:29,30,Medium,Weather: Sandstorms; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0042,BANGRES17DEL03,Metropolitian,Sandstorms,Low,No,23.2,22:38,30,Medium,Weather: Sandstorms; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0019,SURRES13DEL03,Metropolitian,Cloudy,Medium,No,17.2,18:52,30,Medium,Weather: Cloudy; Traffic: Medium,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0050,SURRES010DEL02,Metropolitian,Sandstorms,Low,No,16.1,00:26,30,Medium,Weather: Sandstorms; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0044,CHENRES18DEL03,Urban,Sandstorms,Low,No,15.7,23:21,30,Medium,Weather: Sandstorms; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0025,PUNERES18DEL02,Urban,Cloudy,Low,No,15.0,00:25,30,Medium,Weather: Cloudy; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0046,BANGRES010DEL02,Urban,Stormy,Low,No,14.5,23:20,30,Medium,Weather: Stormy; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0023,MUMRES20DEL02,Urban,Fog,Medium,No,14.3,19:04,30,Medium,Weather: Fog; Traffic: Medium,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0012,COIMBRES13DEL01,Urban,Sunny,Medium,No,30.4,18:00,20,Low,Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0006,BANGRES17DEL02,Metropolitian,Windy,Low,No,25.1,11:30,20,Low,Weather: Windy; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0004,BANGRES15DEL01,Metropolitian,Windy,Low,No,22.1,10:37,20,Low,Weather: Windy; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0021,MYSRES08DEL02,Metropolitian,Sunny,Medium,No,19.5,19:04,20,Low,Traffic: Medium; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0049,VADRES01DEL03,Urban,Windy,Low,No,14.5,00:10,20,Low,Weather: Windy; Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0003,MUMRES14DEL01,Urban,Stormy,Low,No,13.4,09:28,20,Low,Weather: Stormy,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0017,BANGRES15DEL02,Metropolitian,Sunny,Medium,No,38.2,19:03,10,Low,Traffic: Medium,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0048,SURRES01DEL02,Metropolitian,Windy,Low,No,24.6,00:15,10,Low,Weather: Windy,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0001,JAPRES010DEL02,Metropolitian,Windy,Low,No,23.8,09:39,10,Low,Weather: Windy,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0018,MYSRES11DEL02,Metropolitian,Sunny,Medium,No,21.6,18:57,10,Low,Traffic: Medium,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0022,MYSRES04DEL01,Urban,Sunny,Medium,No,20.9,19:16,10,Low,Traffic: Medium,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0002,BANGRES12DEL02,Metropolitian,Sunny,Low,No,18.2,09:23,10,Low,Multiple deliveries: 1,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0024,COIMBRES12DEL02,Metropolitian,Windy,Low,No,14.9,00:30,10,Low,Weather: Windy,No escalation - monitor only
+2026-09-26 07:14:01,ZC-0043,BANGRES19DEL02,Metropolitian,Sunny,Low,No,18.5,23:14,0,Low,,No escalation - monitor only
