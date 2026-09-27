@@ -1,0 +1,4 @@
+sent_at_utc,Order_ID,Risk_Category,Risk_Score,recipient_role,to,subject,channel,gmail_message_id,status
+2026-09-27 06:56,ZC-0040,High,60,cs_lead,nugrahenis@gmail.com,[TRIAL][CS Lead] [HIGH] Delivery risk alert - ZC-0040 (Metropolitian),Gmail connector,1a0e1a7b1841d320,accepted by Gmail
+2026-09-27 06:56,ZC-0040,High,60,customer,nugrahenis@gmail.com,[TRIAL][Customer] Update on your order ZC-0040: new estimated arrival 22:20,Gmail connector,1a0e1a7b2552a41f,accepted by Gmail
+2026-09-27 06:56,ZC-0040,High,60,driver,nugrahenis@gmail.com,[TRIAL][Driver] [HIGH] Delay risk on ZC-0040 - route advice,Gmail connector,1a0e1a7b2439dfe7,accepted by Gmail
